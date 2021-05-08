@@ -1,0 +1,55 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+import zipfile
+os.environ['NLTK_DATA'] = os.getcwd() + "/nltk_data"
+from nltk.corpus import brown
+import nltk
+
+
+
+#
+# Complete the 'tagPOS' function below.
+#
+# The function accepts following parameters:
+#  1. STRING textcontent
+#  2. STRING taggedtextcontent
+#
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+import zipfile
+os.environ['NLTK_DATA'] = os.getcwd() + "/nltk_data"
+from nltk.corpus import brown
+import nltk
+
+
+
+#
+# Complete the 'tagPOS' function below.
+#
+# The function accepts following parameters:
+#  1. STRING textcontent
+#  2. STRING taggedtextcontent
+#
+
+import nltk
+##stop_words = set(stopwords.words('english'))
+def tagPOS(textcontent, taggedtextcontent, defined_tags):
+    words = nltk.word_tokenize(textcontent)
+    nltk_pos_tags = nltk.pos_tag(words)
+    tagged_pos_tag = [ nltk.tag.str2tuple(word) for word in taggedtextcontent.split()]
+    unigram_pos_tag = nltk.UnigramTagger(model=defined_tags)
+    unigram_pos_tag = unigram_pos_tag.tag(words)
+    return nltk_pos_tags,tagged_pos_tag,unigram_pos_tag
+
+if __name__ == '__main__':
